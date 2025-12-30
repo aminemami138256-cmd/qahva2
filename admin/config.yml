@@ -1,0 +1,34 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "assets/images"
+public_folder: "/assets/images"
+
+collections:
+  - name: "site"
+    label: "تنظیمات سایت"
+    files:
+      - name: "hero"
+        label: "سربرگ"
+        file: "content/hero.md"
+        fields:
+          - { label: "عنوان", name: "title", widget: "string", required: true }
+          - { label: "زیرعنوان", name: "subtitle", widget: "text", required: true }
+
+      - name: "about"
+        label: "درباره ما"
+        file: "content/about.md"
+        fields:
+          - { label: "متن", name: "body", widget: "markdown", required: true }
+
+  - name: "products"
+    label: "محصولات"
+    folder: "content/products"
+    create: true
+    delete: true
+    fields:
+      - { label: "عنوان", name: "title", widget: "string", required: true }
+      - { label: "قیمت", name: "price", widget: "string", required: true }
+      - { label: "توضیحات", name: "description", widget: "text", required: true }
+      - { label: "عکس", name: "image", widget: "image", required: true }
